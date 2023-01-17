@@ -4,7 +4,7 @@
 
 ## Input data format
 
-## Algorithm Test Scheme
+## Algorithm testing scheme
 
 
 ## Input data examples
