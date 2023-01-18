@@ -1,8 +1,31 @@
 ## AlfaCrux Attitude Motion Reconstruction
 
 ## Getting Started
+To run this code, you must have MATLAB and its [Aerospace Toolbox](https://www.mathworks.com/help/aerotbx/) installed.
 
-## Input data format
+### Setting up the environment
+  - Clone the `master` branch of `AlfaCrux-Attitude-Motion-Reconstruction` from [here](https://github.com/brenag/AlfaCrux-Attitude-Motion-Reconstruction/tree/main) into `~/tmp`.
+  ```
+  $ cd ~/tmp
+  $ git clone https://github.com/brenag/AlfaCrux-Attitude-Motion-Reconstruction.git
+  $ cd AlfaCrux-Attitude-Motion-Reconstruction
+  $ git checkout main
+  ```
+
+## Necessary input data
+
+### Two-line element set for SGP4 orbit propagation
+
+Past GP element sets [TLE](https://celestrak.org/NORAD/documentation/gp-data-formats.php) can be requested on the [Celestrak](https://celestrak.org/NORAD/archives/request.php) website. The input file has to be on the `AlfaCrux-Attitude-Motion-Reconstruction/source/` directory. The TLE file must be on its standard format (no satellite name on Line 0). 
+
+```
+1 52160U 22033D   22219.78488558  .00007175  00000+0  31352-3 0  9999
+2 52160  97.3869 300.2727 0009244 201.0523 159.0335 15.22365646 19489
+```
+### In-orbit Measurements
+
+To facilitate the arrangement of measurements, the data can be placed in a spreadsheet or a .csv file and then converted into a MATLAB workspace using the following [script](source/TLE/csv_to_mat.m). The measurements must be organized in columns, where each line represents a sample for an instant of time. The order in which the columns are arranged is as shown in the following table.
+
 
 ## Extended Kalman filter testing scheme
 
