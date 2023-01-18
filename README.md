@@ -1,10 +1,11 @@
 ## AlfaCrux Attitude Motion Reconstruction
+The <b>AlfaCrux Attitude Motion Reconstruction</b> utilizes the magnetometer measurements to estimate the attitude motion and magnetic parameters of the satellite using the minimization technique of the sum of squared difference between the in-flight measurements and measurements estimation according to attitude motion model. The obtained magnetometer measurements are processed by extended Kalman filter in order to verify its performance and accuracy using the in-flight data. Along with the attitude quaternion and angular velocity vector, the state vector includes the residual magnetic dipole. 
 
 ## Getting Started
 To run this code, you must have MATLAB and its [Aerospace Toolbox](https://www.mathworks.com/help/aerotbx/) installed.
 
 ### Setting up the environment
-  - Clone the `master` branch of `AlfaCrux-Attitude-Motion-Reconstruction` from [here](https://github.com/brenag/AlfaCrux-Attitude-Motion-Reconstruction/tree/main) into `~/tmp`.
+  - Clone the `main` branch of `AlfaCrux-Attitude-Motion-Reconstruction` from [here](https://github.com/brenag/AlfaCrux-Attitude-Motion-Reconstruction/tree/main) into `~/tmp`.
   ```
   $ cd ~/tmp
   $ git clone https://github.com/brenag/AlfaCrux-Attitude-Motion-Reconstruction.git
@@ -24,8 +25,7 @@ Past GP element sets [TLE](https://celestrak.org/NORAD/documentation/gp-data-for
 ```
 ### In-orbit Measurements
 
-To facilitate the arrangement of measurements, the data can be placed in a spreadsheet or a .csv file and then converted into a MATLAB workspace using the following [script](source/TLE/csv_to_mat.m). The measurements must be organized in columns, where each line represents a sample for an instant of time. The order in which the columns are arranged is as shown in the following table.
-
+To facilitate the arrangement of measurements, the data can be placed in a spreadsheet or a .csv file and then converted into a MATLAB workspace using the following [script](source/TLE/csv_to_mat.m). The measurements must be organized in columns, where each line represents a sample for an instant of time. The columns are arranged in the following order: Year, Month, Day, Hour, Minute, Second, X-axis Gyroscope, Y-axis Gyroscope, Z-axis Gyroscope, X-axis Magnetometer, Y-axis Magnetometer and Z-axis Magnetometer.
 
 ## Extended Kalman filter testing scheme
 
