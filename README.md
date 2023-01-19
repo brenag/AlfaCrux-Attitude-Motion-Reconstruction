@@ -29,7 +29,7 @@ To facilitate the arrangement of measurements, the data can be placed in a sprea
 
 ## Extended Kalman filter testing scheme
 
-1. [SGP4 orbit propagation](source/sgp4.m) ([SGP4](https://celestrak.org/NORAD/documentation/gp-data-formats.php))
+1. [SGP4 orbit propagation](source/sgp4.m) ([SGP4](https://celestrak.org/publications/AIAA/2006-6753/))
 2. [IGRF geomagnetic field determination](source/IGRF_orbital.m) ([IGRF](https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html))
 3. [Cost function minimization for initial conditions](source/differential_evolution.m) ([DE](https://link.springer.com/article/10.1023/A:1008202821328))
 4. [Extended Kalman Filter](source/EKF.m) ([SiriusSat-1 EKF](https://www.sciencedirect.com/science/article/abs/pii/S0094576521003957))
