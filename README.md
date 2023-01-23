@@ -52,7 +52,7 @@ There are 2 different testing schemes, where one only uses in-orbit magnetometer
   
 ## Input data examples
 
-Telemetry packages and respective TLE can be used to test the application. These can all be found in the `source/test/data/` directory.
+Telemetry packages and respective TLE can be used to test the application. These can all be found in the `test/data/` directory.
 
 ## Citing
 
