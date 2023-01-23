@@ -27,6 +27,16 @@ Past GP element sets [TLE](https://celestrak.org/NORAD/documentation/gp-data-for
 
 To facilitate the arrangement of measurements, the data can be placed in a spreadsheet or a .csv file and then converted into a MATLAB workspace using the following [script](source/TLE/csv_to_mat.m). The measurements must be organized in columns, where each line represents a sample for an instant of time. The columns are arranged in the following order: Year, Month, Day, Hour, Minute, Second, X-axis Gyroscope, Y-axis Gyroscope, Z-axis Gyroscope, X-axis Magnetometer, Y-axis Magnetometer and Z-axis Magnetometer.
 
+## Telemetry pre-processing
+
+A bias that appears constant for short periods of time was observed. For each filter run, it is interesting to first estimate this constant bias. This can be done by executing the following steps: 
+
+1. Calculating the mean value (in nT) of the modulus of the IGRF field in ECI. This can be done by a code commented in the [main code](source/Main_AlfaCrux_standard.m).
+2. Change this modulus in the [Func](source/Func.m) file. 
+3. Run the [Magnetometer bias estimation](source/Magnetometer_data_bias_estimation.m).
+4. Remember to check the name of the data files that are loaded into the main code. Make sure they are all according to the time stamps of the telemetry set used in the simulation.
+
+
 ## Extended Kalman filter testing scheme
 
 1. [SGP4 orbit propagation](source/sgp4.m) ([SGP4](https://celestrak.org/publications/AIAA/2006-6753/))
